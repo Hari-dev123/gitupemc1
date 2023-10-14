@@ -3,78 +3,44 @@
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
-    cursor: pointer !important;
 }
-.container{
-    width: 100%;
+body{
+    width: 100;
+    height: 100vh;
+    background: rgb(8, 8, 79);
+}
+nav{
+    width: 100;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: black;
+}
+nav a{
+    text-decoration: none;
+    color: white;
     position: relative;
 }
-.title{
-    text-align: center;
-    padding: 40px 30px 100px 20px;
-    background: tomato;
-    color: white;
-    font-size: 36px;
-}
-.container .header,
-.container .indicator,
-.container .body{
-    max-width: 450px;
-    margin: 0 auto;
-    width: 100%;
-}
-.container .header{
-   position: relative;
-   width: 100;
-   height: 60px;
-   display: flex;
-   margin-top: -50px;
-   font-size: 20px;
-   cursor: pointer;
-   user-select: none;
-}
-.container .header > div{
-    width: 25%;
-    text-align: center;
-    color: white;
-    padding-top: 15px;
-    transition: color 300ms ease-in-out;
-    z-index: 2
-}
-.container .header .active{
-    color: tomato;
-}
-.container .indicator{
-    position: relative;
-    width: 100%;
-    height: 60px;
-    margin-top: -60px;
-}
-.container .indicator > div{
+nav a::after{
+    content: '';
     position: absolute;
+    width: 0;
+    height: 5px;
     left: 0;
-    bottom: 0;
-    width: 25%;
-    height: 100%;
+    bottom: -10px;
     background: white;
-    border-radius: 10px 10px 0 0;
-    transition: all 300ms ease-in-out;
+    transition: 0.3s ease;
 }
-.container .body{
-    position: relative;
+nav a:hover::after{
+    width: 110%;
 }
-.container .body > div{
-    padding: 20px;
-    position: absolute;
-    opacity: 0;
-    top: -100vh;
-}
-
-.container > .body > div > * {
-    margin: 10px 0 ;
-}
-.container .body .active{
-    top: 0;
-    opacity: 1;
-    transition: top 0ms ease-in-out 0ms , opacity 500ms ease-in-out 0ms ;
+div{
+    width: 100%;
+    height: 100vh;
+    color: white;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
